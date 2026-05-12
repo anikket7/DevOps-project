@@ -4,7 +4,7 @@ A modern full-stack parking management application built using the MERN stack an
 
 ---
 
-# ✨ Features
+## ✨ Features
 
 - 🔍 Search and book parking spots
 - 🔐 JWT Authentication System
@@ -19,22 +19,26 @@ A modern full-stack parking management application built using the MERN stack an
 
 ---
 
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 ## Frontend
+
 - React.js
 - Vite
 - Tailwind CSS
 
 ## Backend
+
 - Node.js
 - Express.js
 
 ## Database
+
 - MongoDB
 - Mongoose
 
 ## DevOps Tools
+
 - Docker
 - Docker Compose
 - GitHub Actions
@@ -42,7 +46,7 @@ A modern full-stack parking management application built using the MERN stack an
 
 ---
 
-# 🏗️ System Architecture
+## 🏗️ System Architecture
 
 ```text
 Developer
@@ -62,7 +66,7 @@ Running Application
 
 ---
 
-# 🚀 Local Development Setup
+## 🚀 Local Development Setup
 
 ## 📋 Prerequisites
 
@@ -72,7 +76,7 @@ Running Application
 
 ---
 
-# 1️⃣ Clone Repository
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/anikket7/DevOps-project.git
@@ -81,7 +85,7 @@ cd DevOps-project
 
 ---
 
-# 2️⃣ Docker Setup (Recommended)
+## 2️⃣ Docker Setup (Recommended)
 
 ## Run Full Application Using Docker
 
@@ -115,15 +119,15 @@ Password: admin@1234
 
 ---
 
-# 🌐 Access Application
+## 🌐 Access Application
 
-## Frontend
+**Frontend:**
 
 ```text
 http://localhost:5173
 ```
 
-## Backend
+**Backend:**
 
 ```text
 http://localhost:5000
@@ -131,23 +135,23 @@ http://localhost:5000
 
 ---
 
-# 🐳 Docker Containers
+## 🐳 Docker Containers
 
 This project uses 3 containers:
 
-| Container | Purpose |
-|---|---|
-| Frontend | React Application |
-| Backend | Express API Server |
-| MongoDB | Database |
+ | Container | Purpose |
+ | --- | --- |
+ | Frontend | React Application |
+ | Backend | Express API Server |
+ | MongoDB | Database |
 
 ---
 
-# ⚙️ CI/CD Pipeline
+## ⚙️ CI/CD Pipeline
 
 This project uses GitHub Actions for Continuous Integration.
 
-## Workflow
+**Workflow:**
 
 1. Developer pushes code to GitHub
 2. GitHub Actions workflow triggers automatically
@@ -156,7 +160,7 @@ This project uses GitHub Actions for Continuous Integration.
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
 DevOps-project/
@@ -178,18 +182,18 @@ DevOps-project/
 
 ---
 
-# 🔐 API Endpoints
+## 🔐 API Endpoints
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | /api/parking | Get all parking spots |
-| POST | /api/auth/login | User login |
-| POST | /api/auth/signup | User registration |
-| POST | /api/parking/:id/book | Book parking spot |
+ | Method | Endpoint | Description |
+ | --- | --- | --- |
+ | GET | /api/parking | Get all parking spots |
+ | POST | /api/auth/login | User login |
+ | POST | /api/auth/signup | User registration |
+ | POST | /api/parking/:id/book | Book parking spot |
 
 ---
 
-# 📸 DevOps Features Implemented
+## 📸 DevOps Features Implemented
 
 - ✅ Docker Containerization
 - ✅ Docker Compose Orchestration
@@ -201,15 +205,14 @@ DevOps-project/
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 ## Aniket Kumar Singh
 
-GitHub:
-https://github.com/anikket7
+GitHub: [https://github.com/anikket7](https://github.com/anikket7)
 
 ---
 
-# 📄 License
+## 📄 License
 
 This project is created for academic DevOps CA-2 assessment purposes.

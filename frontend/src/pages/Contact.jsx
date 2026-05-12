@@ -97,10 +97,10 @@ const Contact = () => {
               Send us an email anytime
             </p>
             <a
-              href="mailto:support@parkeasy.in"
+              href="mailto:aniket70045@gmail.com"
               className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
             >
-              support@parkeasy.in
+              aniket70045@gmail.com
             </a>
           </div>
 
@@ -462,7 +462,7 @@ const Contact = () => {
                 How can I report an issue?
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Use the contact form or email us directly at support@parkeasy.in
+                Use the contact form or email us directly at aniket70045@gmail.com
               </p>
             </div>
           </div>

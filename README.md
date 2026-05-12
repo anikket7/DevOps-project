@@ -13,7 +13,7 @@ cloud database integration.
 
 ## Frontend (Vercel)
 
-<https://your-vercel-url.vercel.app>
+<https://devops-project-kohl-seven.vercel.app/>
 
 ## Backend API (Render)
 
@@ -46,13 +46,13 @@ cloud database integration.
 
 ## 🛠️ Tech Stack
 
-## Frontend URL
+## Frontend
 
 - React.js
 - Vite
 - Tailwind CSS
 
-## Backend URL
+## Backend
 
 - Node.js
 - Express.js
@@ -78,11 +78,25 @@ cloud database integration.
 
 ## Backend Image
 
-<https://hub.docker.com/r/YOUR_USERNAME/parkeasy-backend>
+<https://hub.docker.com/repository/docker/anikket7/parkeasy-backend>
 
 ## Frontend Image
 
-<https://hub.docker.com/r/YOUR_USERNAME/parkeasy-frontend>
+<https://hub.docker.com/repository/docker/anikket7/parkeasy-frontend>
+
+---
+
+## Pull Backend Image
+
+```bash
+docker pull anikket7/parkeasy-backend
+```
+
+## Pull Frontend Image
+
+```bash
+docker pull anikket7/parkeasy-frontend
+```
 
 ---
 
@@ -187,16 +201,30 @@ Password: admin@1234
 
 ## 🌐 Application URLs
 
-## Frontend
+## Local Frontend
 
 ```text
 http://localhost:5173
 ```
 
-## Backend
+## Local Backend
 
 ```text
 http://localhost:5000
+```
+
+---
+
+## Production Frontend
+
+```text
+https://devops-project-kohl-seven.vercel.app/
+```
+
+## Production Backend
+
+```text
+https://parkeasy-backend-s3zb.onrender.com
 ```
 
 ---
@@ -255,7 +283,7 @@ DevOps-project/
 
 ---
 
-## 📸 DevOps Features Implemented
+## ✅ DevOps Features Implemented
 
 - ✅ Docker Containerization
 - ✅ Docker Compose Orchestration

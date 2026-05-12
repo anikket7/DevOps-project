@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useAuth } from '../context/AuthContext';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const ParkingSpots = () => {
   const { user, isAdmin } = useAuth();
   const [spots, setSpots] = useState([]);
@@ -91,7 +92,7 @@ const ParkingSpots = () => {
     try {
       setError(null);
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/parking');
+      const response = await axios.get(`${API_URL}/api/parking`);
       setSpots(response.data || []);
     } catch (error) {
       console.error('Error fetching parking spots:', error);
@@ -135,7 +136,7 @@ const ParkingSpots = () => {
         pricePerMonth: 0
       };
 
-      await axios.post('http://localhost:5000/api/parking', spotData, {
+      await axios.post(`${API_URL}/api/parking`, spotData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -181,7 +182,7 @@ const ParkingSpots = () => {
       };
 
       const response = await axios.post(
-        `http://localhost:5000/api/parking/${bookingSpot._id}/book`,
+        `${API_URL}/api/parking/${bookingSpot._id}/book`,
         payload,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -207,7 +208,7 @@ const ParkingSpots = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        `http://localhost:5000/api/parking/${spotId}/release`,
+        `${API_URL}/api/parking/${spotId}/release`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -223,7 +224,7 @@ const ParkingSpots = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/parking/${spotId}`, {
+      await axios.delete(`${API_URL}/api/parking/${spotId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchSpots();
@@ -261,7 +262,7 @@ const ParkingSpots = () => {
       };
 
       await axios.put(
-        `http://localhost:5000/api/parking/${editingSpot}`,
+        `${API_URL}/api/parking/${editingSpot}`,
         updateData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -851,7 +852,7 @@ const ParkingSpots = () => {
                         dateFormat="Pp"
                         minDate={new Date()}
                         placeholderText="Select Start Time"
-                        className="w-full pl-14 pr-4 py-4 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-2xl focus:outline-none focus:ring-4 focus:ring-green-500/10 focus:border-green-500 text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-300 cursor-pointer font-medium hover:bg-gray-100 dark:hover:bg-gray-700 w-full"
+                        className="w-full pl-14 pr-4 py-4 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-2xl focus:outline-none focus:ring-4 focus:ring-green-500/10 focus:border-green-500 text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-300 cursor-pointer font-medium hover:bg-gray-100 dark:hover:bg-gray-700"
                         wrapperClassName="w-full"
                       />
                     </div>
@@ -871,7 +872,7 @@ const ParkingSpots = () => {
                         dateFormat="Pp"
                         minDate={bookingStart ? new Date(bookingStart) : new Date()}
                         placeholderText="Select End Time"
-                        className="w-full pl-14 pr-4 py-4 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-2xl focus:outline-none focus:ring-4 focus:ring-green-500/10 focus:border-green-500 text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-300 cursor-pointer font-medium hover:bg-gray-100 dark:hover:bg-gray-700 w-full"
+                        className="w-full pl-14 pr-4 py-4 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-2xl focus:outline-none focus:ring-4 focus:ring-green-500/10 focus:border-green-500 text-gray-900 dark:text-white placeholder-gray-400 transition-all duration-300 cursor-pointer font-medium hover:bg-gray-100 dark:hover:bg-gray-700"
                         wrapperClassName="w-full"
                       />
                     </div>

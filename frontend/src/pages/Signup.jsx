@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -66,7 +68,7 @@ const Signup = () => {
     setLoading(true);
     try {
       const { confirmPassword, ...signupData } = formData;
-      const response = await axios.post('http://localhost:5000/api/auth/signup', signupData);
+      const response = await axios.post(`${API_URL}/api/auth/signup`, signupData);
       login(response.data.user, response.data.token);
       navigate('/');
     } catch (error) {

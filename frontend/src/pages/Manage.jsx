@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const Manage = () => {
   const { user, isAdmin } = useAuth();
   const navigate = useNavigate();
@@ -31,13 +31,13 @@ const Manage = () => {
     try {
       const token = localStorage.getItem('token');
       const [spotsRes, usersRes, bookingsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/parking', {
+        axios.get(`${API_URL}/api/parking`, {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/user/all', {
+        axios.get(`${API_URL}/api/user/all`, {
           headers: { Authorization: `Bearer ${token}` }
         }).catch(() => ({ data: [] })),
-        axios.get('http://localhost:5000/api/parking/bookings/all', {
+        axios.get(`${API_URL}/api/parking/bookings/all`, {
           headers: { Authorization: `Bearer ${token}` }
         }).catch(() => ({ data: [] }))
       ]);
@@ -57,7 +57,7 @@ const Manage = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/user/${userId}`, {
+      await axios.delete(`${API_URL}/api/user/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchData();
@@ -73,7 +73,7 @@ const Manage = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/parking/${spotId}`, {
+      await axios.delete(`${API_URL}/api/parking/${spotId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchData();
@@ -112,7 +112,7 @@ const Manage = () => {
       };
 
       await axios.put(
-        `http://localhost:5000/api/parking/${editingSpot}`,
+        `${API_URL}/api/parking/${editingSpot}`,
         updateData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

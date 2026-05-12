@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const Profile = () => {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
@@ -19,7 +20,7 @@ const Profile = () => {
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/parking', {
+      const response = await axios.get(`${API_URL}/api/parking`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Filter bookings for current user
@@ -37,7 +38,7 @@ const Profile = () => {
   const fetchBookingHistory = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/parking/history/user', {
+      const response = await axios.get(`${API_URL}/api/parking/history/user`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setBookingHistory(response.data);
@@ -75,7 +76,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        `http://localhost:5000/api/parking/${spotId}/release`,
+        `${API_URL}/api/parking/${spotId}/release`,
         {
           status: action,
           bookingId: bookingId

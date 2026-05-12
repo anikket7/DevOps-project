@@ -6,13 +6,10 @@ on:
       - main
 
 jobs:
-
   docker:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -23,13 +20,13 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Backend Image
-        run: docker build -t anikket7/parkeasy-backend ./backend
+        run: docker build -t anikket7/parkeasy-backend:latest ./backend
 
       - name: Build Frontend Image
-        run: docker build -t anikket7/parkeasy-frontend ./frontend
+        run: docker build -t anikket7/parkeasy-frontend:latest ./frontend
 
       - name: Push Backend Image
-        run: docker push anikket7/parkeasy-backend
+        run: docker push anikket7/parkeasy-backend:latest
 
       - name: Push Frontend Image
-        run: docker push anikket7/parkeasy-frontend
+        run: docker push anikket7/parkeasy-frontend:latest

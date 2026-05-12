@@ -1,6 +1,29 @@
 # 🚗 ParkEasy - DevOps Enabled MERN Parking Management System
 
-A modern full-stack parking management application built using the MERN stack and enhanced with DevOps practices including Docker, Docker Compose, and GitHub Actions CI/CD pipeline automation.
+![CI](https://github.com/anikket7/DevOps-project/actions/workflows/ci.yml/badge.svg)
+
+A modern full-stack parking management application built using the MERN stack
+and enhanced with DevOps practices including Docker, Docker Compose,
+GitHub Actions CI/CD, Render deployment, Vercel hosting, and MongoDB Atlas
+cloud database integration.
+
+---
+
+## 🌐 Live Deployment
+
+## Frontend (Vercel)
+
+<https://your-vercel-url.vercel.app>
+
+## Backend API (Render)
+
+<https://parkeasy-backend-s3zb.onrender.com>
+
+---
+
+## 🔗 GitHub Repository
+
+<https://github.com/anikket7/DevOps-project>
 
 ---
 
@@ -13,28 +36,30 @@ A modern full-stack parking management application built using the MERN stack an
 - 🎟️ Automatic 5-digit parking entry code generation
 - 📱 Fully responsive UI
 - 🌙 Dark mode support
+- 📜 Booking history management
 - 🐳 Dockerized frontend and backend
 - ⚙️ CI/CD pipeline using GitHub Actions
-- 🗄️ MongoDB containerized database
+- 🗄️ MongoDB Atlas cloud database
+- ☁️ Cloud deployment using Render & Vercel
 
 ---
 
 ## 🛠️ Tech Stack
 
-## Frontend
+## Frontend URL
 
 - React.js
 - Vite
 - Tailwind CSS
 
-## Backend
+## Backend URL
 
 - Node.js
 - Express.js
 
 ## Database
 
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 
 ## DevOps Tools
@@ -43,6 +68,21 @@ A modern full-stack parking management application built using the MERN stack an
 - Docker Compose
 - GitHub Actions
 - GitHub
+- Docker Hub
+- Render
+- Vercel
+
+---
+
+## 🐳 Docker Hub Images
+
+## Backend Image
+
+<https://hub.docker.com/r/YOUR_USERNAME/parkeasy-backend>
+
+## Frontend Image
+
+<https://hub.docker.com/r/YOUR_USERNAME/parkeasy-frontend>
 
 ---
 
@@ -55,13 +95,41 @@ GitHub Repository
    ↓
 GitHub Actions
    ↓
-Docker Compose Build
+Docker Build & CI Pipeline
    ↓
-Frontend Container
-Backend Container
-MongoDB Container
+Docker Hub
    ↓
-Running Application
+Frontend (Vercel)
+Backend API (Render)
+   ↓
+MongoDB Atlas
+```
+
+---
+
+## ☁️ Cloud Deployment Architecture
+
+```text
+Frontend  → Vercel
+Backend   → Render
+Database  → MongoDB Atlas
+CI/CD     → GitHub Actions
+Containers → Docker
+Source Code → GitHub
+```
+
+---
+
+## ⚙️ CI/CD Workflow
+
+```text
+1. Developer pushes code to GitHub
+2. GitHub Actions workflow triggers automatically
+3. Docker images are built
+4. Docker images are pushed to Docker Hub
+5. Render deploys backend automatically
+6. Vercel deploys frontend automatically
+7. Updated application goes live
 ```
 
 ---
@@ -85,9 +153,7 @@ cd DevOps-project
 
 ---
 
-## 2️⃣ Docker Setup (Recommended)
-
-## Run Full Application Using Docker
+## 2️⃣ Run Application Using Docker
 
 ```bash
 docker compose up --build
@@ -119,15 +185,15 @@ Password: admin@1234
 
 ---
 
-## 🌐 Access Application
+## 🌐 Application URLs
 
-**Frontend:**
+## Frontend
 
 ```text
 http://localhost:5173
 ```
 
-**Backend:**
+## Backend
 
 ```text
 http://localhost:5000
@@ -139,24 +205,11 @@ http://localhost:5000
 
 This project uses 3 containers:
 
- | Container | Purpose |
- | --- | --- |
- | Frontend | React Application |
- | Backend | Express API Server |
- | MongoDB | Database |
-
----
-
-## ⚙️ CI/CD Pipeline
-
-This project uses GitHub Actions for Continuous Integration.
-
-**Workflow:**
-
-1. Developer pushes code to GitHub
-2. GitHub Actions workflow triggers automatically
-3. Docker containers are built
-4. Application becomes deployment-ready
+| Container | Purpose |
+| --- | --- |
+| Frontend | React Application |
+| Backend | Express API Server |
+| MongoDB | Database |
 
 ---
 
@@ -166,10 +219,17 @@ This project uses GitHub Actions for Continuous Integration.
 DevOps-project/
 │
 ├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
 │   ├── Dockerfile
+│   └── server.js
 │
 ├── frontend/
+│   ├── src/
+│   ├── public/
 │   ├── Dockerfile
+│   └── vite.config.js
 │
 ├── .github/
 │   └── workflows/
@@ -184,12 +244,14 @@ DevOps-project/
 
 ## 🔐 API Endpoints
 
- | Method | Endpoint | Description |
- | --- | --- | --- |
- | GET | /api/parking | Get all parking spots |
- | POST | /api/auth/login | User login |
- | POST | /api/auth/signup | User registration |
- | POST | /api/parking/:id/book | Book parking spot |
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | /api/parking | Get all parking spots |
+| POST | /api/auth/login | User login |
+| POST | /api/auth/signup | User registration |
+| POST | /api/parking/:id/book | Book parking spot |
+| POST | /api/parking/:id/release | Release parking spot |
+| GET | /api/user/profile | User profile |
 
 ---
 
@@ -198,18 +260,48 @@ DevOps-project/
 - ✅ Docker Containerization
 - ✅ Docker Compose Orchestration
 - ✅ Multi-container Architecture
-- ✅ MongoDB Container
+- ✅ MongoDB Atlas Integration
 - ✅ CI/CD using GitHub Actions
 - ✅ Automated Docker Builds
 - ✅ MERN Stack Integration
+- ✅ Cloud Deployment
+- ✅ GitHub Repository Management
+- ✅ Production Deployment Workflow
+
+---
+
+## 📊 Expected Results
+
+- Successful CI/CD automation
+- Dockerized application deployment
+- Automated GitHub workflow execution
+- Smooth frontend and backend integration
+- Cloud database connectivity
+- Fully functional parking management system
+- Production-ready deployment architecture
+
+---
+
+## 📚 Learning Outcomes
+
+- MERN Stack Application Deployment
+- Docker Containerization
+- Docker Compose Usage
+- CI/CD Pipeline Automation
+- GitHub Actions Workflow
+- Cloud Deployment
+- MongoDB Atlas Integration
+- DevOps Workflow Implementation
+- Version Control and Repository Management
 
 ---
 
 ## 👨‍💻 Author
 
-## Aniket Kumar Singh
+### Aniket Kumar Singh
 
-GitHub: [https://github.com/anikket7](https://github.com/anikket7)
+GitHub:
+<https://github.com/anikket7>
 
 ---
 

@@ -13,7 +13,7 @@ cloud database integration.
 
 ## Frontend (Vercel)
 
-<https://devops-project-kohl-seven.vercel.app/>
+<https://www.myparkeasy.tech/>
 
 ## Backend API (Render)
 
@@ -218,13 +218,7 @@ http://localhost:5000
 ## Production Frontend
 
 ```text
-https://devops-project-kohl-seven.vercel.app/
-```
-
-## Production Backend
-
-```text
-https://parkeasy-backend-s3zb.onrender.com
+https://www.myparkeasy.tech/
 ```
 
 ---
